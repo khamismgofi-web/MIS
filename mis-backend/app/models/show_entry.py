@@ -1,0 +1,1 @@
+#ShowEntry (project <-> exhibition join table)
