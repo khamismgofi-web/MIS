@@ -1,0 +1,1 @@
+#Loads .env settings via pydantic settings
