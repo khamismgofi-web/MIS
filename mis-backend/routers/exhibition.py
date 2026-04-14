@@ -1,0 +1,1 @@
+#Exhibition CRUD endpoints
