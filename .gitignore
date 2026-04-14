@@ -1,3 +1,4 @@
 #git ignore specific file,folders and patterns
 venv/
 .env
+mis-backend/.env
