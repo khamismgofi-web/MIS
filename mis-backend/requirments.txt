@@ -1,24 +1,24 @@
 #all python dependencies with pinned version
 #Async web framework
-FastAPI == o.111+
+FastAPI==0.115.5
 
 #Async ORM
-SQLALchemy == 2.0
+SQLALchemy==2.0
 
 #Validation
-Pydantic == v2
+Pydantic>=v2
 
 #Database Migration
-Alembic == 1.13+
+Alembic==1.13
 
 #Primary Database
-PostgreSQL == 15
+psycopg[binary]==3.1.18
 
 #JWT token creation
-python-jose == 3.3+
+python-jose==3.3
 
 #Password Harshing
-passlib+bcrypt == latest
+passlib[bcrypt]==1.7.4
 
 #Async test framework
-pytest+httpx == latest
+pytest[httpx]
