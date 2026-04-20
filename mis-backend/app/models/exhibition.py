@@ -1,4 +1,4 @@
-from sqlalchemy import Mapped,mapped_column,relationship
+from sqlalchemy.orm import Mapped,mapped_column,relationship
 from sqlalchemy import String,Enum,Text,Date,DateTime,func
 from app.core.database import Base
 import enum,uuid
