@@ -14,7 +14,7 @@ load_dotenv()
 config = context.config
 
 #set sqlalchemy.url from .env file
-config.set_main_option("sqlalchemy.url"
+config.set_main_option("sqlalchemy.url",
 os.getenv("DATABASE_URL"))
 
 #Interpret the config file for python Logging
