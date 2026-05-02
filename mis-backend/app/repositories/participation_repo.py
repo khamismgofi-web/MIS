@@ -28,3 +28,19 @@ class ParticipationRepository:
             .order_by(Participation.joined_at)
         )
         return list(result.scalars().all())
+    async def get_by_user(self, user_id: uuid.UUID) -> list[Participation]:
+        result = await self.db.execute(
+            select(Participation).where(Participation.user_id == user_id)
+        )
+        return list(result.scalars().all())
+
+    async def remove(self, user_id: uuid.UUID, project_id: uuid.UUID) -> bool:
+        result = await self.db.execute(
+            select(Participation)
+            .where(Participation.user_id == user_id)
+            .where(Participation.project_id == project_id)
+        )
+        entry = result.scalar_one_or_none()
+        if not entry: return False
+        await self.db.delete(entry)
+        return True
