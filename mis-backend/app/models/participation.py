@@ -22,4 +22,4 @@ join_at: Mapped[DateTime] = mapped_column(DateTime(timezone=True),server_default
 
 #Relationship
 User:Mapped['User'] = relationship(back_populates = 'participation')
-project:Mapped['Project'] = relationship(back_populates='participation')
+project:Mapped['project'] = relationship(back_populates='participation')
