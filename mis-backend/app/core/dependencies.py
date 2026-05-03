@@ -1,7 +1,7 @@
 # get_db(),get_current_use() via Depends()from typing import AsyncGenerator
 from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
-from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.ext.asyncio import AsyncSession,AsyncGenerator
 from app.core.database import AsyncSessionLocal
 from app.core.security import verify_token
 from app.repositories.user_repo import UserRepository
@@ -14,7 +14,7 @@ async def get_db() -> AsyncGenerator[AsyncSession, None]:
         try:
             yield session
             await session.commit()
-            except Exception:
+        except Exception:
             await session.rollback()
             raise
 
