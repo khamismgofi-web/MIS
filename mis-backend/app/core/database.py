@@ -1,5 +1,5 @@
 # Async SQLAlchemy engine & session factoryfrom sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase,create_async_engine,async_sessionmaker,AsyncSession
 from app.core.config import settings
 
 # Async engine — echo=True prints all SQL in debug mode (helpful during dev)
