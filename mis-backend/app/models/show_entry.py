@@ -15,8 +15,8 @@ class ShowEntry(Base):
     __table_args__ = (UniqueConstraint("project_id", "exhibition_id", name="uq_project_exhibition"),)
 
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
-    project_id: Mapped[uuid.UUID] = mapped_column(ForeignKey('project.id'), nullable=False)
-    exhibition_id: Mapped[uuid.UUID] = mapped_column(ForeignKey('exhibition.id'), nullable=False)
+    project_id: Mapped[uuid.UUID] = mapped_column(ForeignKey('projects.id'), nullable=False)
+    exhibition_id: Mapped[uuid.UUID] = mapped_column(ForeignKey('exhibitions.id'), nullable=False)
     status: Mapped[EntryStatus] = mapped_column(Enum(EntryStatus), default=EntryStatus.PENDING)
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
     submitted_at: Mapped[DateTime] = mapped_column(DateTime(timezone=True), server_default=func.now())

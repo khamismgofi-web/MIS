@@ -16,8 +16,8 @@ class Report(Base):
     report_type: Mapped[ReportType] = mapped_column(Enum(ReportType), nullable=False)
     title: Mapped[str] = mapped_column(String(300), nullable=False)
     content: Mapped[str] = mapped_column(Text, nullable=False)
-    exhibition_id: Mapped[uuid.UUID | None] = mapped_column(ForeignKey('exhibition.id'), nullable=True)
-    generated_by_id: Mapped[uuid.UUID] = mapped_column(ForeignKey('user.id'), nullable=False)
+    exhibition_id: Mapped[uuid.UUID | None] = mapped_column(ForeignKey('exhibitions.id'), nullable=True)
+    generated_by_id: Mapped[uuid.UUID] = mapped_column(ForeignKey('users.id'), nullable=False)
     generated_at: Mapped[DateTime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     # Relationships
