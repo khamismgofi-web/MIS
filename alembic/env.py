@@ -29,7 +29,8 @@ from app.models import (
     participation,
     project,
     report,
-    show_entry,user,
+    show_entry,
+    user,
 )
 # target_metadata = mymodel.Base.metadata
 target_metadata = Base.metadata
