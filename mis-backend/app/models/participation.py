@@ -10,7 +10,7 @@ class ParticipationRole(str,enum,Enum):
     OBSERVER = "Observer"
 
 class Participation(Base):
-    __tableName__ = "Participation"
+    __tableName__ = "participation"
     __table_agre__ = (UniqueConstraint('user_id','project_id',name = "uq_user_ptoject"),)
 
 
