@@ -1,10 +1,10 @@
 from logging.config import fileConfig
-
+from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 from sqlalchemy import create_engine
 from alembic import context
-
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession 
 from app.core.database import Base
 from app.core.config import settings
 
