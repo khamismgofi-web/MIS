@@ -10,7 +10,7 @@ class ExhibitionStatus(str,enum.Enum):
     CANCELLED = "Cancelled"
 
 class Exhibition(Base):
-    __tableName__ = "exihibitions"
+    __tableName__ = "exhibitions"
 
 
 id: Mapped[uuid.UUId] = mapped_column(primary_key=True,default=uuid.uuid4)
