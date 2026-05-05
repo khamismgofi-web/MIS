@@ -10,7 +10,7 @@ from app.core.config import settings
 
 # convert async URL to a sync for Alembic
 DATABASE_URL = settings.DATABASE_URL.replace(
-    "postgresql+asnycpg", "postgresql+psycopg2"
+    "postgresql+asyncpg", "postgresql+psycopg2"
 )
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
