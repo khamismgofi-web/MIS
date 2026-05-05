@@ -10,4 +10,4 @@ class Setting(BaseSettings):
     DEBUG: bool=False
 
     model_config={"env_file":".env"}
-Setting=Setting()
+settings = Setting()
