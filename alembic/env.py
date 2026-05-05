@@ -4,14 +4,23 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 from sqlalchemy import create_engine
 from alembic import context
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession 
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+import sys
+from pathlib import Path
+
+# Add mis-backend to Python path
+sys.path.insert(0, str(Path(__file__).parent.parent / 'mis-backend'))
+
 from app.core.database import Base
 from app.core.config import settings
 
 # convert async URL to a sync for Alembic
-DATABASE_URL = settings.DATABASE_URL.replace(
-    "postgresql+asyncpg", "postgresql+psycopg2"
-)
+if settings.DATABASE_URL.startswith("postgresql+asyncpg"):
+    DATABASE_URL = settings.DATABASE_URL.replace(
+        "postgresql+asyncpg", "postgresql+psycopg2"
+    )
+else:
+    DATABASE_URL = settings.DATABASE_URL
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config

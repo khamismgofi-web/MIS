@@ -1,5 +1,5 @@
 #ShowEntry (project <-> exhibition join table)
-from sqlalchemy import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import DateTime, ForeignKey, Enum, func, UniqueConstraint, Text
 from app.core.database import Base
 import enum, uuid
