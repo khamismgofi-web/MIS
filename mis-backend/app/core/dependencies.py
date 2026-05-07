@@ -1,7 +1,8 @@
-# get_db(),get_current_use() via Depends()from typing import AsyncGenerator
+# get_db(), get_current_user() via Depends()
+from typing import AsyncGenerator
 from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
-from sqlalchemy.ext.asyncio import AsyncSession,AsyncGenerator
+from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.database import AsyncSessionLocal
 from app.core.security import verify_token
 from app.repositories.user_repo import UserRepository
