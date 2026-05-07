@@ -399,8 +399,8 @@ Please follow the [Conventional Commits](https://www.conventionalcommits.org/) f
 
 Backend Developer · CS Student · Python Enthusiast
 
-[![GitHub](https://img.shields.io/badge/GitHub-khamisngofi--web-181717?style=flat&logo=github)](https://github.com/khamisngofi-web)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat&logo=linkedin)](https://linkedin.com/in/khamisngofi)
+[![GitHub](https://img.shields.io/badge/GitHub/khamismgofi-web-181717?style=flat&logo=github)](https://github.com/khamisngofi-web)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat&logo=linkedin)](https://linkedin.com/in/khamismgofi)
 
 </div>
 
@@ -414,7 +414,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <div align="center">
 
-Made with ❤️ by **Khamis Ngofi**
+Made with ❤️ by **Khamis Mgofi**
 
 ⭐ Star this repo if you found it helpful!
 
