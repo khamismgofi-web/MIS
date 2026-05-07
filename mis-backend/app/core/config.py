@@ -1,5 +1,6 @@
 #Loads .env settings via pydantic settings
 from pydantic_settings import BaseSettings
+from pathlib import Path
 
 class Setting(BaseSettings):
     DATABASE_URL : str
@@ -9,5 +10,5 @@ class Setting(BaseSettings):
     APP_NAME:  str="MIS Platform"
     DEBUG: bool=False
 
-    model_config={"env_file":".env"}
+    model_config={"env_file": str(Path(__file__).parent.parent.parent / ".env")}
 settings = Setting()
