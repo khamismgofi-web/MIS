@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem('token');
     if (token) {
       // Verify token and get user info
-      api.get('/api/v1/auth/me')
+      api.get('/api/v1/users/me')
         .then(response => {
           setUser(response.data);
         })
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('token', access_token);
 
       // Get user info after login
-      const userResponse = await api.get('/api/v1/auth/me');
+      const userResponse = await api.get('/api/v1/users/me');
       setUser(userResponse.data);
 
       return { success: true };
