@@ -53,4 +53,3 @@ const Register = () => {
 };
 
 export default Register;
-EOF

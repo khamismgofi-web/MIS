@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 
 // Pages
+import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Projects from './pages/Projects';
 import Users from './pages/Users';
