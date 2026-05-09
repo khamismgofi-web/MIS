@@ -20,5 +20,5 @@ class Participation(Base):
     join_at: Mapped[DateTime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     # Relationships
-    user: Mapped['User'] = relationship(back_populates='participation')
-    project: Mapped['Project'] = relationship(back_populates='participation')
+    user: Mapped['User'] = relationship(back_populates='participations')
+    project: Mapped['Project'] = relationship(back_populates='participations')
