@@ -26,11 +26,4 @@ def get_async_session_local():
         )
     return _AsyncSessionLocal
 
-# For backward compatibility
-@property
-def engine():
-    return get_engine()
-
-@property
-def AsyncSessionLocal():
-    return get_async_session_local()
+_AsyncSessionLocal = get_async_session_local()

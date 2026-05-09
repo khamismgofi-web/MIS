@@ -16,7 +16,7 @@
 
 <br/>
 
-[📖 Documentation](#-documentation) · [🚀 Quick Start](#-quick-start) · [📡 API Reference](#-api-reference) · [🤝 Contributing](#-contributing) · [🐛 Report Bug](https://github.com/khamisngofi-web/epms/issues)
+[📖 Documentation](#-documentation) · [🚀 Quick Start](#-quick-start) · [📡 API Reference](#-api-reference) · [🤝 Contributing](#-contributing) · [🐛 Report Bug](https://github.com/khamismgofi-web/epms/issues)
 
 </div>
 
@@ -197,7 +197,7 @@ Make sure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/khamisngofi-web/epms.git
+git clone https://github.com/khamismgofi-web/epms.git
 cd epms
 ```
 

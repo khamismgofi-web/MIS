@@ -1,7 +1,20 @@
 #git ignore specific file,folders and patterns
+# for backend
 venv/
 .env
 mis-backend/.env
 __pycache__/
 *.__pycache__
 .pytest_cache/
+
+# for frontend  
+node_modules/
+dist/
+build/
+venv/
+.env
+.env.local
+
+# for Misc
+.DS_Store
+.vscode/

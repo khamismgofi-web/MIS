@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import api from '../api/api';
@@ -9,6 +10,7 @@ import {
   Trash2,
   Users,
   Calendar,
+  FolderOpen,
 } from 'lucide-react';
 
 const Projects = () => {
