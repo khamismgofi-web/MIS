@@ -74,6 +74,17 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <AppLayout>
+                    <Dashboard />
+                  </AppLayout>
+                </ProtectedRoute>
+              }
+              />
             <Route
               path="/projects"
               element={
