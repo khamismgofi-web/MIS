@@ -19,6 +19,7 @@ app.include_router(participation_api.router)
 app.include_router(exhibition.router)
 app.include_router(reports_api.router)
 
+@app.post("/login")
 @app.get('/health')
 async def health(): return {'status': 'ok', 'app': 'MIS Platform'}
 
