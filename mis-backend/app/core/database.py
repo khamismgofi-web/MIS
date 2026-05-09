@@ -13,7 +13,7 @@ def get_engine():
     global _engine
     if _engine is None:
         from app.core.config import settings
-        _engine = create_async_engine(settings.DATABASE_URL, echo=settings.DEBUG)
+        _engine = create_async_engine(settings.DATABASE_URL, echo=settings.DEBUG, connect_args={"ssl":True})
     return _engine
 
 def get_async_session_local():
