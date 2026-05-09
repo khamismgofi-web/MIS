@@ -26,4 +26,4 @@ def get_async_session_local():
         )
     return _AsyncSessionLocal
 
-_AsyncSessionLocal = get_async_session_local()
+AsyncSessionLocal = get_async_session_local()
