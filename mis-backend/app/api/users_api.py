@@ -7,6 +7,26 @@ from app.models.user import User
 import uuid
 
 router = APIRouter(prefix="/api/v1/users", tags=["Users"])
+with open('app/api/users_api.py', 'r') as f:
+    content = f.read()
+
+@router.get("/me", response_model=UserRead)
+async def get_me(
+    current_user: User = Depends(get_current_user),
+):
+    """Get current authenticated user"""
+    return current_user
+
+
+
+content = content.replace(
+    '@router.get("/{user_id}"',
+    me_endpoint + '@router.get("/{user_id}"'
+)
+
+with open('app/api/users_api.py', 'w') as f:
+    f.write(content)
+print('Done')
 
 @router.post("/", response_model=UserRead, status_code=status.HTTP_201_CREATED)
 async def create_user(
