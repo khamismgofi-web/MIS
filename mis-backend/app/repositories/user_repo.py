@@ -5,6 +5,8 @@ from app.models.user import User, UserRole
 from app.schemas.users import UserCreate, UserUpdate
 import uuid
 from passlib.context import CryptContext
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+from passlib.context import CryptContext
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
