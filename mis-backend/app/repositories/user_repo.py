@@ -4,6 +4,9 @@ from sqlalchemy.exc import IntegrityError
 from app.models.user import User, UserRole
 from app.schemas.users import UserCreate, UserUpdate
 import uuid
+from passlib.context import CryptContext
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 class UserRepository:
     """Database operations for users"""
@@ -15,7 +18,7 @@ class UserRepository:
         user = User(
             full_name=user_data.full_name,
             email=user_data.email,
-            hashed_password=user_data.password,  # TODO: hash password properly
+            hashed_password=pwd_context.hash(user_data.password),
             role=user_data.role,
             department=user_data.department
         )
