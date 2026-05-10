@@ -20,8 +20,7 @@ async def get_me(
 
 
 content = content.replace(
-    '@router.get("/{user_id}"',
-    me_endpoint + '@router.get("/{user_id}"'
+    '@router.get("/{user_id}"', '@router.get("/{user_id}"'
 )
 
 with open('app/api/users_api.py', 'w') as f:
