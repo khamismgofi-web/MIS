@@ -3,6 +3,7 @@ from typing import AsyncGenerator
 from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.ext.asyncio import AsyncSession
+import uuid
 from app.core.database import AsyncSessionLocal
 from app.core.security import verify_token
 from app.repositories.user_repo import UserRepository
@@ -25,7 +26,7 @@ async def get_current_user(
     db:    AsyncSession = Depends(get_db),
 ):
     payload = verify_token(token)      # raises 401 if token invalid/expired
-    user = await UserRepository(db).get_by_id(payload['sub'])
+    user = await UserRepository(db).get_by_id(uuid.UUID(payload['sub']))
     if not user or not user.is_active:
         raise HTTPException(status_code=401, detail='User not found or inactive')
     return user
