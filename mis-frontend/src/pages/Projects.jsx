@@ -42,12 +42,12 @@ const Projects = () => {
   });
 
   const filteredProjects = projects?.filter(project =>
-    project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     project.description?.toLowerCase().includes(searchTerm.toLowerCase())
   ) || [];
 
   const handleCreateProject = (projectData) => {
-    createProjectMutation.mutate(projectData);
+    createProjectMutation.mutate({title: projectData.name, description: projectData.description});
   };
 
   const handleDeleteProject = (projectId) => {
@@ -103,7 +103,7 @@ const Projects = () => {
             <div key={project.id} className="card hover:shadow-md transition-shadow">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-lg font-semibold text-secondary-900">
-                  {project.name}
+                  {project.title}
                 </h3>
                 <div className="relative">
                   <button className="p-1 rounded-full hover:bg-secondary-100">
