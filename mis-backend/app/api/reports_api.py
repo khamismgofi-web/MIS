@@ -8,7 +8,7 @@ import uuid
 
 router = APIRouter(prefix="/api/v1/reports", tags=["Reports"])
 
-@router.post("/participation", response_model=ReportRead, status_code=status.HTTP_201_CREATED)
+@router.post("/", response_model=ReportRead, status_code=status.HTTP_201_CREATED)
 async def generate_participation_report(
     exhibition_id: uuid.UUID | None = None,
     db: AsyncSession = Depends(get_db),
