@@ -57,8 +57,8 @@ const Dashboard = () => {
     },
   });
 
-  const StatCard = ({ title, value, icon: Icon, color }) => (
-    <div className="card">
+  const StatCard = ({ title, value, icon: Icon, color, trend, borderColorHex }) => (
+    <div className="card border-b-4" style={{borderBottomColor:borderColorHex}}>
       <div className="flex items-center">
         <div className={`p-3 rounded-full ${color}`}>
           <Icon className="h-6 w-6 text-white" />
@@ -67,6 +67,8 @@ const Dashboard = () => {
           <p className="text-sm font-medium text-secondary-600">{title}</p>
           <p className="text-2xl font-bold text-secondary-900">
             {statsLoading ? '...' : value}
+          </p>
+          <p className="text-xs text-green-500 mt-2">{trend} 
           </p>
         </div>
       </div>
@@ -100,18 +102,24 @@ const Dashboard = () => {
           value={stats?.users || 0}
           icon={Users}
           color="bg-blue-500"
+          trend="⤒ 12% from last month"
+          borderColorHex="#3b82f6"
         />
         <StatCard
           title="Active Projects"
           value={stats?.projects || 0}
           icon={FolderOpen}
           color="bg-green-500"
+          trend="⤒ 3 new this week"
+          borderColorHex="#22c55e"
         />
         <StatCard
           title="Tasks Completed"
           value={stats?.tasks || 0}
           icon={CheckSquare}
           color="bg-purple-500"
+          trend="⤒ 8 completed today"
+          borderColorHex="#a855f7"
         />
       </div>
 
