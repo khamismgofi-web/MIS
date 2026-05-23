@@ -16,7 +16,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-64 bg-white shadow-sm border-r border-secondary-200">
+    <div className="w-30 bg-white shadow-sm border-r border-secondary-200">
       <div className="p-6">
         <nav className="space-y-2">
           {navigation.map((item) => (
