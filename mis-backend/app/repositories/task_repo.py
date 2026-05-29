@@ -52,4 +52,6 @@ class TaskRepository:
         if not task:
             return False
         await self.db.delete(task)
+        await self.db.commit()
+
         return True
