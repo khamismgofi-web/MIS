@@ -43,9 +43,9 @@ class TaskRepository:
         for key, value in update_data.items():
             setattr(task, key, value)
 
-        await self.db.flush()
+        await self.db.commit()
         await self.db.refresh(task)
-        return task
+        return task 
 
     async def delete(self, task_id: uuid.UUID) -> bool:
         task = await self.get_by_id(task_id)
